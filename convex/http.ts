@@ -4,7 +4,10 @@ import { Webhook } from "svix";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { api } from "./_generated/api"
 
- 
+ const webhookSecret = process.env.CLERK_WEBHOOK_SECRET;
+ const CLERK_SECRET_KEY = process.env.CLERK_SECRET_KEY;
+ console.log(webhookSecret, CLERK_SECRET_KEY);
+ console.log(process.env.CLERK_SECRET_KEY)
 
  const http = httpRouter();
 

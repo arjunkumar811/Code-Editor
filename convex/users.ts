@@ -26,4 +26,28 @@ export const syncUser = mutation({
     },
 })
 
+export const getUser = query({
+    args: {
+        userId: v.string(),
+    },
+    
+    handler: async (ctx, args) => {
+        if(!args.userId) {
+            throw new Error("User ID is required");
+            return null;
+        }
 
+        const user = await ctx.db
+        .query("users")
+        .withIndex("by_user_id")
+        .filter((q) => q.eq(q.field("userId"), args.userId))
+        .first();
+
+        if(!user) {
+            throw new Error("User not found");
+            return null;
+        }
+
+        return user;
+    }
+})

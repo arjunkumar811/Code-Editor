@@ -1,4 +1,5 @@
 const LanguageSelector = ({hasAccess}: {hasAccess: boolean}) => {
+    
     return (
         <div>
             <h1>Language Selector</h1>
@@ -7,3 +8,5 @@ const LanguageSelector = ({hasAccess}: {hasAccess: boolean}) => {
 }               
 
 export default LanguageSelector;
+
+

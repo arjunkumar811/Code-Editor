@@ -1,10 +1,8 @@
 export default {
-    providers: [
-      {
-        domain: "https://sharing-quetzal-51.clerk.accounts.dev/",
-        applicationID: "convex",
-      },
-    ]
-  };
-
-
+  providers: [
+    {
+      domain: "https://maximum-troll-54.clerk.accounts.dev/",
+      applicationID: "convex",
+    },
+  ],
+};

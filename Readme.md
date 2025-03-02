@@ -44,8 +44,8 @@ LEMON_SQUEEZY_WEBHOOK_SECRET=your-lemon-squeezy-webhook-secret
 
 1️⃣ **Clone the Repository**
 ```bash
-git clone https://github.com/your-repo.git
-cd your-repo
+git clone https://github.com/arjunkumar811/Code-Editor.git
+cd code-craft
 ```
 
 2️⃣ **Install Dependencies**

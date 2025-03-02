@@ -12,6 +12,7 @@ import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
 import useMounted from "@/hooks/useMounted";
 import ShareSnippetDialog from "./ShareSnippetDialog";
 
+
 function EditorPanel() {
   const clerk = useClerk();
   const [isShareDialogOpen, setIsShareDialogOpen] = useState(false);
@@ -25,7 +26,7 @@ function EditorPanel() {
     const savedCode = localStorage.getItem(`editor-code-${language}`);
     const newCode = savedCode || LANGUAGE_CONFIG[language]?.defaultCode;
 
-    // @ts-ignore
+    // @ts-expect-error: editor is not defined
     const model = editor.getModel();
     if (model && newCode) {
       model.setValue(newCode);
@@ -43,7 +44,7 @@ function EditorPanel() {
     if (!editor) return;
 
     const defaultCode = LANGUAGE_CONFIG[language]?.defaultCode;
-    // @ts-ignore 
+    // @ts-expect-error: editor is not defined
     const model = editor.getModel();
 
     if (model && defaultCode) {
@@ -133,8 +134,8 @@ function EditorPanel() {
               onChange={handleEditorChange}
               theme={theme}
               beforeMount={defineMonacoThemes}
-              onMount={(editorInstance: any) => {
-                setEditor(editorInstance);
+              onMount={(editor: any) => {
+                setEditor(editor);
               }}
               options={{
                 minimap: { enabled: false },

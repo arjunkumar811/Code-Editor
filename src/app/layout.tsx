@@ -17,6 +17,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+
 export const metadata: Metadata = {
   title: "Code Craft",
   description: "Share and run code snippets",
